@@ -41,4 +41,9 @@ class ApplicationController < Sinatra::Base
     @article.update(params[:article])
     redirct to "articles/#{@article.id}"
   end
+#delete
+  post '/articles/:id/delete' do
+    @article = Article.find(params[:id])
+    @article.delete(params[:aricle])
+  end
 end
